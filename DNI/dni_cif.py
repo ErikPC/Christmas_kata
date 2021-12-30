@@ -1,6 +1,4 @@
 
-from tablaAsignacion import *
-
 
 class Dni:
     def __init__(self, cadena=""):
@@ -8,7 +6,8 @@ class Dni:
         self.numeroSano = False
         self.letraSana = False
         # Composición (agregación) "Has - a" / "Tiene - un"
-        self.tabla = TablaAsignacion()
+        self.tabla = {0: 'T', 1: 'R', 2: 'W', 3: 'A', 4: 'G', 5: 'M', 6: 'Y', 7: 'F', 8: 'P', 9: 'D', 10: 'X', 11: 'B', 12: 'N', 13: 'J',
+                      14: 'Z', 15: 'S', 16: 'Q', 17: 'V', 18: 'H', 19: 'L', 20: 'C', 21: 'K', 22: 'E'}
 
     ### interfaz PUBLICA ###
 
@@ -48,11 +47,14 @@ class Dni:
         # calcularLetra no puede ejecutarse si antes no se cumplen las condiciones previas en checkDni
         # y checkletra
         if self.getNumeroSano():
-            return self.tabla.calcularLetra(self.getParteNumericaDni())
+            return self.calcularLetra()
         else:
             return False
 
     ### parte PRIVADA ###
+    def calcularLetra(self):
+        numeroletra = self.getParteNumericaDni() % 23
+        return self.tabla[numeroletra]
 
     def checkLongitud(self):
         return len(self.dni) == 9
@@ -71,7 +73,7 @@ class Dni:
 
     def getParteNumericaDni(self):
         if self.getNumeroSano():
-            return self.dni[:-1]
+            return int(self.dni[:-1])
         else:
             return False
 
