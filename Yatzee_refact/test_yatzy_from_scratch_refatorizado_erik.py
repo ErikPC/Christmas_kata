@@ -46,18 +46,28 @@ def test_sixes():
     assert 6 == Yatzy.sixes(1, 1, 3, 3, 6)
     assert 12 == Yatzy.sixes(4, 6, 5, 4, 6)
 @pytest.mark.four_of_a_kind
-def four_of_a_kind():
+def test_four_of_a_kind():
     assert 16 == Yatzy.four_of_a_kind(1, 4, 4, 4, 4)
     assert 0 == Yatzy.four_of_a_kind(1, 1, 3, 3, 6)
-    assert 25 == Yatzy.four_of_a_kind(4, 5, 5, 5, 5)
+    assert 20 == Yatzy.four_of_a_kind(4, 5, 5, 5, 5)
 
 @pytest.mark.three_of_a_kind
-def three_of_a_kind():
-    assert 12 == Yatzy.three_of_a_kind(1, 2, 4, 4, 4)
+def test_three_of_a_kind():
+    assert 3 == Yatzy.three_of_a_kind(1, 2, 1, 1, 1)
     assert 9 == Yatzy.three_of_a_kind(1, 1, 3, 3, 3)
     assert 15 == Yatzy.three_of_a_kind(4, 2, 5, 5, 5)
 @pytest.mark.two_pair
-def two_pair():
-    assert 8 == Yatzy.two_pair(1, 6, 2, 4, 4)
+def test_two_pair():
+    assert 0 == Yatzy.two_pair(1, 6, 2, 4, 4)
     assert 0 == Yatzy.two_pair(1, 1, 3, 5, 6)
-    assert 26 == Yatzy.two_pair(4, 4, 6, 5, 5)
+    assert 18 == Yatzy.two_pair(4, 4, 6, 5, 5)
+
+@pytest.mark.smallStraight
+def test_smallStraight():
+    assert 15 == Yatzy.smallStraight(1, 2, 3 , 4, 5)
+    assert 0 == Yatzy.smallStraight(1, 2, 1, 4, 5)
+
+@pytest.mark.largeStraight
+def test_largeStraight():
+    assert 20 == Yatzy.largeStraight(2, 3, 4, 5, 6)
+    assert 0 == Yatzy.largeStraight(1 , 2, 3, 4, 4)
