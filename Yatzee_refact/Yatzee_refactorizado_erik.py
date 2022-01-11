@@ -27,6 +27,10 @@ class Yatzy:
     def threes(dices):
         return dices.count(3)
 
+    @staticmethod
+    def fours(dices):
+        return dices.count(4)
+
     def __init__(self, d1, d2, d3, d4, d5):
         self.dice = [0]*5
         self.dice[0] = d1
@@ -35,12 +39,6 @@ class Yatzy:
         self.dice[3] = d4
         self.dice[4] = d5
 
-    def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4):
-                sum += 4
-        return sum
 
     def fives(self):
         s = 0
