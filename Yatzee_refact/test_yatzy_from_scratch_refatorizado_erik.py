@@ -24,13 +24,29 @@ def test_twos():
 @pytest.mark.threes
 def test_three():
     assert 6 == Yatzy.threes(3, 3, 6, 1, 2)
-    assert 9 == Yatzy.chance(3, 1, 3, 3, 6)
-    assert 0 == Yatzy.chance(4, 5, 5, 6, 1)
+    assert 9 == Yatzy.threes(3, 1, 3, 3, 6)
+    assert 0 == Yatzy.threes(4, 5, 5, 6, 1)
 @pytest.mark.fours
 def test_fours():
-    assert 4 == Yatzy.chance(1, 2, 3, 4, 5)
-    assert 0 == Yatzy.chance(1, 1, 3, 3, 6)
-    assert 8 == Yatzy.chance(4, 5, 5, 4, 1)
+    assert 4 == Yatzy.fours(1, 2, 3, 4, 5)
+    assert 0 == Yatzy.fours(1, 1, 3, 3, 6)
+    assert 8 == Yatzy.fours(4, 5, 5, 4, 1)
+@pytest.mark.fives
+def test_fives():
+    yatzy = Yatzy(1, 2, 3, 4, 5)
+    assert 5 == yatzy.fives()
+    yatzy = Yatzy(1, 1, 3, 3, 6)
+    assert 0 == yatzy.fives()
+    yatzy = Yatzy(4, 5, 5, 4, 1)
+    assert 10 == yatzy.fives()
+@pytest.mark.sixes
+def test_sixes():
+    yatzy = Yatzy(1, 2, 3, 4, 5)
+    assert 0 == yatzy.sixes()
+    yatzy = Yatzy(1, 1, 3, 3, 6)
+    assert 6 == yatzy.sixes()
+    yatzy = Yatzy(6, 5, 5, 6, 1)
+    assert 12 == yatzy.sixes()
 @pytest.fixture
 def inyector():
     # Es el setup de unittest o de JUnit
