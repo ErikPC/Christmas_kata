@@ -21,24 +21,24 @@ class Yatzy:
 
     @staticmethod
     def twos(dices):
-        return dices.count(2)
+        return dices.count(2) * 2
 
     @staticmethod
     def threes(dices):
-        return dices.count(3)
+        return dices.count(3) * 3
 
     @staticmethod
     def fours(dices):
-        return dices.count(4)
+        return dices.count(4) * 4
     
     @staticmethod
     def fives(dices):
-        return dices.count(5)
+        return dices.count(5) * 5
     
     @staticmethod
     def sixes(dices):
-        return dices.count(6)
-        
+        return dices.count(6) * 6
+
     def __init__(self, d1, d2, d3, d4, d5):
         self.dice = [0]*5
         self.dice[0] = d1
