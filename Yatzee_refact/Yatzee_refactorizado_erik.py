@@ -62,45 +62,33 @@ class Yatzy:
         return 0
 
     @staticmethod
-    def two_pair(d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        n = 0
-        score = 0
-        for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
-
-        if (n == 2):
-            return score * 2
+    def two_pair(*dices):
+        pairs=[]
+        for number in range(1,7):
+            if dices.count(number) >= 2:
+                pairs.append(number*2)
+        print(pairs)
+        if len(pairs) > 1:
+            return sum(pairs)
         else:
             return 0
 
     @staticmethod
-    def four_of_a_kind(dices):
-        if len(set(dices)) == 2:
-            if dices.count(set(dices)[0]) == 4:
-                return set(dices)[0] * 4
+    def four_of_a_kind(*dices):
+        dice = list(set(dices))
+        if len(dice) == 2:
+            if dices.count(dice[0]) == 4:
+                return dice[0] * 4
             else: 
-                return set(dices)[1] * 4
+                return dice[1] * 4
         else:
             return 0
+
     @staticmethod
-    def three_of_a_kind(d1,  d2,  d3,  d4,  d5):
-        t = [0]*6
-        t[d1-1] += 1
-        t[d2-1] += 1
-        t[d3-1] += 1
-        t[d4-1] += 1
-        t[d5-1] += 1
-        for i in range(6):
-            if (t[i] >= 3):
-                return (i+1) * 3
+    def three_of_a_kind(*dices):
+        for number in range(6, 0 ,-1):
+            if dices.count(number) >= 3:
+                return number * 3
         return 0
 
     @staticmethod
