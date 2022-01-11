@@ -58,6 +58,6 @@ def three_of_a_kind():
     assert 15 == Yatzy.three_of_a_kind(4, 2, 5, 5, 5)
 @pytest.mark.two_pair
 def two_pair():
-    assert 8 == Yatzy.fours(1, 6, 2, 4, 4)
-    assert 2 == Yatzy.fours(1, 1, 3, 5, 6)
-    assert 10 == Yatzy.fours(4, 1, 6, 5, 5)
+    assert 8 == Yatzy.two_pair(1, 6, 2, 4, 4)
+    assert 0 == Yatzy.two_pair(1, 1, 3, 5, 6)
+    assert 26 == Yatzy.two_pair(4, 4, 6, 5, 5)
