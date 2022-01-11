@@ -34,7 +34,11 @@ class Yatzy:
     @staticmethod
     def fives(dices):
         return dices.count(5)
-
+    
+    @staticmethod
+    def sixes(dices):
+        return dices.count(6)
+        
     def __init__(self, d1, d2, d3, d4, d5):
         self.dice = [0]*5
         self.dice[0] = d1
@@ -45,12 +49,7 @@ class Yatzy:
 
 
 
-    def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)):
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
+
 
     @staticmethod
     def score_pair(d1,  d2,  d3,  d4,  d5):
