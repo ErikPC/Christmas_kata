@@ -11,7 +11,11 @@ def test_chance():
     assert 14 == Yatzy.chance(1, 1, 3, 3, 6)
     assert 21 == Yatzy.chance(4, 5, 5, 6, 1)
 
-
+@pytest.mark.ones
+def test_ones():
+    assert 4 == Yatzy.ones(1, 1 ,1 ,6 ,1 )
+    assert 1 == Yatzy.ones(1, 6 ,6 ,6, 5)
+    assert 5 == Yatzy.ones(1, 1, 1, 1, 1)
 @pytest.fixture
 def inyector():
     # Es el setup de unittest o de JUnit
