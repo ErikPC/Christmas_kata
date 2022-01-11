@@ -1,5 +1,5 @@
 import pytest
-from yatzy import Yatzy
+from Yatzee_refactorizado_erik import Yatzy
 
 # Chance
 # The player scores the sum of all dice, no matter what they read.
@@ -13,9 +13,9 @@ def test_chance():
 
 @pytest.mark.ones
 def test_ones():
-    assert 4 == Yatzy.ones(1, 1 ,1 ,6 ,1 )
-    assert 1 == Yatzy.ones(1, 6 ,6 ,6, 5)
-    assert 5 == Yatzy.ones(1, 1, 1, 1, 1)
+    assert 4 == Yatzy.one(1, 1 ,1 ,6 ,1 )
+    assert 1 == Yatzy.one(1, 6 ,6 ,6, 5)
+    assert 5 == Yatzy.one(1, 1, 1, 1, 1)
 @pytest.mark.twos
 def test_twos():
     assert 4 == Yatzy.twos(2, 4, 4, 5, 2)
@@ -33,30 +33,16 @@ def test_fours():
     assert 8 == Yatzy.fours(4, 5, 5, 4, 1)
 @pytest.mark.fives
 def test_fives():
-    yatzy = Yatzy(1, 2, 3, 4, 5)
-    assert 5 == yatzy.fives()
-    yatzy = Yatzy(1, 1, 3, 3, 6)
-    assert 0 == yatzy.fives()
-    yatzy = Yatzy(4, 5, 5, 4, 1)
-    assert 10 == yatzy.fives()
+    assert 5 == Yatzy.fives(1, 2, 3, 4, 5)
+    assert 0 == Yatzy.fives(1, 1, 3, 3, 6)
+    assert 10 == Yatzy.fives(4, 5, 5, 4, 1)
 @pytest.mark.sixes
 def test_sixes():
-    yatzy = Yatzy(1, 2, 3, 4, 5)
-    assert 0 == yatzy.sixes()
-    yatzy = Yatzy(1, 1, 3, 3, 6)
-    assert 6 == yatzy.sixes()
-    yatzy = Yatzy(6, 5, 5, 6, 1)
-    assert 12 == yatzy.sixes()
-@pytest.fixture
-def inyector():
-    # Es el setup de unittest o de JUnit
-    tirada = Yatzy(1, 2, 3, 4, 5)
-    return tirada
-
-
-def test_fours(inyector):
-    # Es necesario un objeto ya creado
-    valorEsperado = 4
-    # No puedo testear con fixtures = inyeccion de dependencias
-    # los metodos estaticos como chance()
-    assert valorEsperado == inyector.fours()
+    assert 0 == Yatzy.sixes(1, 2, 3, 4, 5)
+    assert 6 == Yatzy.sixes(1, 1, 3, 3, 6)
+    assert 12 == Yatzy.sixes(4, 6, 5, 4, 6)
+@pytest.mark.four_of_a_kind
+def four_of_a_kind():
+    assert 16 == Yatzy.fours(1, 4, 4, 4, 4)
+    assert 0 == Yatzy.fours(1, 1, 3, 3, 6)
+    assert 25 == Yatzy.fours(4, 5, 5, 5, 5)
