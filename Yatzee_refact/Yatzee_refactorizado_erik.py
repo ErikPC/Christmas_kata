@@ -1,22 +1,5 @@
-from _pytest.python_api import ApproxSequencelike
-
-
 class Yatzy:
 
-    @staticmethod
-    def chance(*dices):
-        total = 0
-        for dice in dices:
-            total += dice 
-        return total
-
-    @staticmethod
-    def yatzy(*dice):
-        for i in dice:
-            if dice.count(i) == 5:
-                return 50
-            else:
-                return 0
 
     @staticmethod
     def one(*dices):
@@ -43,6 +26,13 @@ class Yatzy:
         return dices.count(6) * 6
 
     @staticmethod
+    def chance(*dices):
+        total = 0
+        for dice in dices:
+            total += dice 
+        return total
+
+    @staticmethod
     def score_pair(*dices):
         for number in range(6, 0 ,-1):
             if dices.count(number) >= 2:
@@ -62,6 +52,13 @@ class Yatzy:
             return 0
 
     @staticmethod
+    def three_of_a_kind(*dices):
+        for number in range(6, 0 ,-1):
+            if dices.count(number) >= 3:
+                return number * 3
+        return 0
+
+    @staticmethod
     def four_of_a_kind(*dices):
         dice = list(set(dices))
         if len(dice) == 2:
@@ -71,13 +68,6 @@ class Yatzy:
                 return dice[1] * 4
         else:
             return 0
-
-    @staticmethod
-    def three_of_a_kind(*dices):
-        for number in range(6, 0 ,-1):
-            if dices.count(number) >= 3:
-                return number * 3
-        return 0
 
     @staticmethod
     def small_straight(*dices):
@@ -105,3 +95,11 @@ class Yatzy:
             elif dices.count(i) == 2:
                 score += i * 2
         return score
+
+    @staticmethod
+    def yatzy(*dice):
+        for i in dice:
+            if dice.count(i) == 5:
+                return 50
+            else:
+                return 0
