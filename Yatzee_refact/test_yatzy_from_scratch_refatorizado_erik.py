@@ -64,10 +64,10 @@ def test_two_pair():
 
 @pytest.mark.small_straight
 def test_small_straight():
-    assert 15 == Yatzy.smallStraight(1, 2, 3 , 4, 5)
-    assert 0 == Yatzy.smallStraight(1, 2, 1, 4, 5)
+    assert 15 == Yatzy.small_straight(1, 2, 3 , 4, 5)
+    assert 0 == Yatzy.small_straight(1, 2, 1, 4, 5)
 
 @pytest.mark.large_traight
 def test_large_traight():
-    assert 20 == Yatzy.largeStraight(2, 3, 4, 5, 6)
-    assert 0 == Yatzy.largeStraight(1 , 2, 3, 4, 4)
+    assert 20 == Yatzy.large_straight(2, 3, 4, 5, 6)
+    assert 0 == Yatzy.large_straight(1 , 2, 3, 4, 4)
