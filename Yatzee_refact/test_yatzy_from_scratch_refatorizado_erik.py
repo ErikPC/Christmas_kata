@@ -62,12 +62,12 @@ def test_two_pair():
     assert 0 == Yatzy.two_pair(1, 1, 3, 5, 6)
     assert 18 == Yatzy.two_pair(4, 4, 6, 5, 5)
 
-@pytest.mark.smallStraight
-def test_smallStraight():
+@pytest.mark.small_straight
+def test_small_straight():
     assert 15 == Yatzy.smallStraight(1, 2, 3 , 4, 5)
     assert 0 == Yatzy.smallStraight(1, 2, 1, 4, 5)
 
-@pytest.mark.largeStraight
-def test_largeStraight():
+@pytest.mark.large_traight
+def test_large_traight():
     assert 20 == Yatzy.largeStraight(2, 3, 4, 5, 6)
     assert 0 == Yatzy.largeStraight(1 , 2, 3, 4, 4)
