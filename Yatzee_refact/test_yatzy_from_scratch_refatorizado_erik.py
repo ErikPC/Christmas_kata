@@ -71,3 +71,9 @@ def test_small_straight():
 def test_large_traight():
     assert 20 == Yatzy.large_straight(2, 3, 4, 5, 6)
     assert 0 == Yatzy.large_straight(1 , 2, 3, 4, 4)
+@pytest.mark.full_house
+def test_full_house():
+    assert 8 == Yatzy.full_house(1, 1, 2, 2, 2)
+    assert 18 == Yatzy.full_house(3, 3, 4, 4, 4)
+    assert 19 == Yatzy.full_house(5, 5, 3, 3, 3)
+    assert 0 == Yatzy.full_house(5, 5, 2, 2, 1)
