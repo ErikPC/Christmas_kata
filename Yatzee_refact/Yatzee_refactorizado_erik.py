@@ -2,48 +2,48 @@ class Yatzy:
 
 
     @staticmethod
-    def one(*dices):
-        return dices.count(1)
+    def one(*dice):
+        return dice.count(1)
 
     @staticmethod
-    def twos(*dices):
-        return dices.count(2) * 2
+    def twos(*dice):
+        return dice.count(2) * 2
 
     @staticmethod
-    def threes(*dices):
-        return dices.count(3) * 3
+    def threes(*dice):
+        return dice.count(3) * 3
 
     @staticmethod
-    def fours(*dices):
-        return dices.count(4) * 4
+    def fours(*dice):
+        return dice.count(4) * 4
     
     @staticmethod
-    def fives(*dices):
-        return dices.count(5) * 5
+    def fives(*dice):
+        return dice.count(5) * 5
     
     @staticmethod
-    def sixes(*dices):
-        return dices.count(6) * 6
+    def sixes(*dice):
+        return dice.count(6) * 6
 
     @staticmethod
-    def chance(*dices):
+    def chance(*dice):
         total = 0
-        for dice in dices:
-            total += dice 
+        for die in dice:
+            total += die 
         return total
 
     @staticmethod
-    def score_pair(*dices):
+    def score_pair(*dice):
         for number in range(6, 0 ,-1):
-            if dices.count(number) >= 2:
+            if dice.count(number) >= 2:
                 return number * 2
         return 0
 
     @staticmethod
-    def two_pair(*dices):
+    def two_pair(*dice):
         pairs=[]
         for number in range(1,7):
-            if dices.count(number) >= 2:
+            if dice.count(number) >= 2:
                 pairs.append(number*2)
         print(pairs)
         if len(pairs) > 1:
@@ -52,47 +52,47 @@ class Yatzy:
             return 0
 
     @staticmethod
-    def three_of_a_kind(*dices):
+    def three_of_a_kind(*dice):
         for number in range(6, 0 ,-1):
-            if dices.count(number) >= 3:
+            if dice.count(number) >= 3:
                 return number * 3
         return 0
 
     @staticmethod
-    def four_of_a_kind(*dices):
-        dice = list(set(dices))
-        if len(dice) == 2:
-            if dices.count(dice[0]) == 4:
-                return dice[0] * 4
+    def four_of_a_kind(*dice):
+        die = list(set(dice))
+        if len(die) == 2:
+            if dice.count(die[0]) == 4:
+                return die[0] * 4
             else: 
-                return dice[1] * 4
+                return die[1] * 4
         else:
             return 0
 
     @staticmethod
-    def small_straight(*dices):
+    def small_straight(*dice):
         for i in range(1,6):
-            if dices.count(i) == 0:
+            if dice.count(i) == 0:
                 return 0
         return 15
 
     @staticmethod
-    def large_straight(*dices):
+    def large_straight(*dice):
         for i in range(2,7):
-            if dices.count(i) == 0:
+            if dice.count(i) == 0:
                 return 0
         return 20
 
     @staticmethod
-    def full_house(*dices):
-        dice = list(set(dices))
-        if len(dice) > 2:
+    def full_house(*dice):
+        die = list(set(dice))
+        if len(die) > 2:
             return 0
         score = 0
         for i in range(1,7):
-            if dices.count(i) == 3:
+            if dice.count(i) == 3:
                 score += i * 3
-            elif dices.count(i) == 2:
+            elif dice.count(i) == 2:
                 score += i * 2
         return score
 
