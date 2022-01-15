@@ -2,7 +2,7 @@ class Yatzy:
 
 
     @staticmethod
-    def one(*dice):
+    def onces(*dice):
         return dice.count(1)
 
     @staticmethod
