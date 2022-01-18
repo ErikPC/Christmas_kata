@@ -3,27 +3,33 @@ class Yatzy:
 
     @staticmethod
     def ones(*dice):
-        return dice.count(1)
+        ONE = 1
+        return dice.count(ONE)
 
     @staticmethod
     def twos(*dice):
-        return dice.count(2) * 2
+        TWO = 2
+        return dice.count(TWO) * TWO
 
     @staticmethod
     def threes(*dice):
-        return dice.count(3) * 3
+        THREE = 3
+        return dice.count(THREE) * THREE
 
     @staticmethod
     def fours(*dice):
-        return dice.count(4) * 4
+        FOUR = 4
+        return dice.count(FOUR) * FOUR
     
     @staticmethod
     def fives(*dice):
-        return dice.count(5) * 5
+        FIVE = 5
+        return dice.count(FIVE) * FIVE
     
     @staticmethod
     def sixes(*dice):
-        return dice.count(6) * 6
+        SIX = 6
+        return dice.count(SIX) * SIX
 
     @staticmethod
     def chance(*dice):
