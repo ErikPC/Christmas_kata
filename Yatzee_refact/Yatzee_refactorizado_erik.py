@@ -33,10 +33,8 @@ class Yatzy:
 
     @staticmethod
     def chance(*dice):
-        total = 0
-        for die in dice:
-            total += die 
-        return total
+        score = sum(dice)
+        return score
 
     @staticmethod
     def score_pair(*dice):
