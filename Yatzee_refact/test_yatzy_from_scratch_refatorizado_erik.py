@@ -17,9 +17,9 @@ def yatzy():
 
 @pytest.mark.ones
 def test_ones():
-    assert 4 == Yatzy.onces(1, 1 ,1 ,6 ,1 )
-    assert 1 == Yatzy.onces(1, 6 ,6 ,6, 5)
-    assert 5 == Yatzy.onces(1, 1, 1, 1, 1)
+    assert 4 == Yatzy.ones(1, 1 ,1 ,6 ,1 )
+    assert 1 == Yatzy.ones(1, 6 ,6 ,6, 5)
+    assert 5 == Yatzy.ones(1, 1, 1, 1, 1)
 @pytest.mark.twos
 def test_twos():
     assert 4 == Yatzy.twos(2, 4, 4, 5, 2)
