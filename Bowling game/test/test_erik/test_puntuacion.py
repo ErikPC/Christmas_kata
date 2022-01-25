@@ -1,5 +1,5 @@
 import pytest
-from main.solucion_erik.Puntuacion import Puntuacion
+from main.solucion_erik.ScoreCard import ScoreCard
 
 
 @pytest.mark.total_score_hitting_pins
@@ -30,10 +30,10 @@ def test_spare_symbol():
     score_card = ScoreCard(pins)
     assert total == score_card.score()
 
-    pins = "0//////////"
-    total = 50
-    score_card = ScoreCard(pins)
-    assert total == score_card.score()
+    # pins = "0//////////"
+    # total = 50
+    # score_card = ScoreCard(pins)
+    # assert total == score_card.score()
 
 
 @pytest.mark.strike_symbol
